@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Playfair+Display:wght@500;600;700;800&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Alice', serif;
+}
+
+
+.hero {
+    position: relative;
+    background: url(../public/image/bg1.jpg) no-repeat center center/cover;
+    height: 550px;
+}
+
+.hero::before,
+.testimonial .container::before {
+    position: absolute;
+    content: '';
+    background-color: #ffffffee;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.hero h1 {
+    line-height: 1.4;
+}
+
+.testimonial .container {
+    position: relative;
+    background: url(../public/image/bg2.jpg) no-repeat center center/cover;
+    background-attachment: fixed;
+}
+
+.testimonial .container::before {
+    background-color: #000000b6;
+}
+
+
+@media (min-width: 1280px) {
+    .container {
+        padding-left: 5rem !important;
+        padding-right: 5rem !important;
+        margin: 0 auto;
+    }
+}
+
+@layer base {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: 'Playfair Display', serif;
+        color: rgb(55, 33, 33) !important;
+    }
+
+    .prod-img a img {
+        mix-blend-mode: multiply;
+        padding: 0 10px;
+        filter: contrast(1.10);
+    }
+
+    h1 {
+        @apply mb-2 text-2xl font-semibold;
+    }
+
+    h2,
+    h3 {
+        @apply mb-1 font-medium;
+    }
+}
